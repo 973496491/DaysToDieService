@@ -1,10 +1,11 @@
-package com.loko.utils.service
+package com.loko.utils.service_impl
 
 import com.loko.utils.insert_entity.UploadIllustratedInfoEntity
 import com.loko.utils.mapper.IllustratedInfoMapper
 import com.loko.utils.req.EditPropInfoReq
 import com.loko.utils.req.EditZombieInfoReq
 import com.loko.utils.resp.*
+import com.loko.utils.service.IllustratedInfoService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 

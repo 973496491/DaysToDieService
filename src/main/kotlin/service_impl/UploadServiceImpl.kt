@@ -1,7 +1,8 @@
-package com.loko.utils.service
+package com.loko.utils.service_impl
 
 import com.loko.utils.insert_entity.DllEntity
 import com.loko.utils.mapper.UploadMapper
+import com.loko.utils.service.UploadService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
