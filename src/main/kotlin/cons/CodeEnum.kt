@@ -52,4 +52,10 @@ enum class CodeEnum(val code: Int, val message: String) {
     INSERT_PROP_FAILED(code = 100022, message = "插入道具信息失败."),
 
     UPDATE_PROP_FAILED(code = 100023, message = "更新道具信息失败."),
+
+    XML_INFO_IS_NULL(code = 100024, message = "XML信息不存在."),
+
+    WHITELIST_NOT_FOUND(code = 100025, message = "白名单信息不存在."),
+
+    KEY_INFO_NOT_FOUND(code = 100026, message = "密钥信息不存在."),
 }

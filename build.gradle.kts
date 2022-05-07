@@ -27,10 +27,6 @@ tasks.getByName<Jar>("jar") {
     enabled = true
 }
 
-//springBoot {
-//    mainClassName = "com.loko.utils.ApplicationKt"
-//}
-
 tasks.getByName<BootJar>("bootJar") {
     launchScript()
 }
@@ -41,21 +37,21 @@ dependencies {
     implementation("com.sun.xml.bind:jaxb-core:3.0.2")
     implementation("javax.activation:activation:1.1.1")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.0")
-    implementation("mysql:mysql-connector-java:8.0.28")
+    implementation("mysql:mysql-connector-java:8.0.29")
     implementation("org.springframework.boot:spring-boot-maven-plugin:2.6.7")
     implementation("org.springframework.boot:spring-boot-starter:2.6.7")
     implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2")
-    implementation("org.springframework.boot:spring-boot-starter-web:2.6.6")
+    implementation("org.springframework.boot:spring-boot-starter-web:2.6.7")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("com.google.code.gson:gson:2.9.0")
     implementation("io.jsonwebtoken:jjwt:0.9.1")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.13.2.2")
-    implementation("com.qcloud:cos_api:5.6.74")
+    implementation("com.qcloud:cos_api:5.6.77")
+    // redis
+    implementation("org.springframework.boot:spring-boot-starter-data-redis:2.6.7")
+    implementation("org.apache.commons:commons-pool2:2.11.1")
 }
 
-group = "me.97349"
-version = "1.0-SNAPSHOT"
-description = "consoleApp"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 tasks.withType<KotlinCompile> {

@@ -39,3 +39,33 @@ fun Any?.safeToInt(): Int {
         }
     )
 }
+
+/**
+ * 安全将数据转为String值
+ */
+fun Any?.safeToString(): String {
+    return kotlin.runCatching {
+        this?.toString() ?: ""
+    }.fold(
+        {
+            it
+        }, {
+            ""
+        }
+    )
+}
+
+/**
+ * 安全将数据转为String值
+ */
+fun Any?.safeToStringOrNull(): String? {
+    return kotlin.runCatching {
+        this?.toString()
+    }.fold(
+        {
+            it
+        }, {
+            null
+        }
+    )
+}

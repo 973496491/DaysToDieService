@@ -40,4 +40,9 @@ object TableConst {
      * 装备信息表名
      */
     const val PROP_INFO = "info_prop"
+
+    /**
+     * 装备信息表名
+     */
+    const val XML_CONTENT = "xml_content"
 }
