@@ -41,7 +41,7 @@ class IllustratedInfoServiceImpl : IllustratedInfoService {
     }
 
     override fun findZombieIdByName(name: String): Int {
-        return illustratedInfoMapper.findZombieIdByName(name)
+        return illustratedInfoMapper.findZombieIdByName(name) ?: -1
     }
 
     override fun deleteZombieInfo(id: Int): Boolean {
@@ -70,7 +70,7 @@ class IllustratedInfoServiceImpl : IllustratedInfoService {
     }
 
     override fun findPropIdByName(name: String): Int {
-        return illustratedInfoMapper.findPropIdByName(name)
+        return illustratedInfoMapper.findPropIdByName(name) ?: -1
     }
 
     override fun deletePropInfo(id: Int): Boolean {

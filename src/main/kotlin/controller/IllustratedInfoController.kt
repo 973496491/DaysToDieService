@@ -224,10 +224,11 @@ open class IllustratedInfoController {
     open fun insertPropInfo(
         @RequestBody req: EditPropInfoReq,
     ): BaseResp {
-        val insertReq = req.copy()
-
-        val id = illustratedInfoService.findPropIdByName(req.name)
-        if (id > 0) {
+        val propId = illustratedInfoService.findPropIdByName(req.name)
+        val insertReq = req.copy(
+            id = propId
+        )
+        if (propId > 0) {
             // 更新信息
             val isSuc = illustratedInfoService.updatePropInfo(insertReq)
             return if (isSuc) {

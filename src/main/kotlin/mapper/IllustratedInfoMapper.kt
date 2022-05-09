@@ -95,8 +95,8 @@ interface IllustratedInfoMapper {
     /**
      * 查询古神 id
      */
-    @Delete("DELETE FROM ${TableConst.ZOMBIE_INFO} WHERE `name` = #{name}")
-    fun findZombieIdByName(name: String): Int
+    @Select("SELECT `id` FROM ${TableConst.ZOMBIE_INFO} WHERE `name` = #{name}")
+    fun findZombieIdByName(name: String): Int?
 
     /**
      * 删除古神信息
@@ -180,8 +180,8 @@ interface IllustratedInfoMapper {
     /**
      * 查询道具 id
      */
-    @Delete("DELETE FROM ${TableConst.PROP_INFO} WHERE `name` = #{name}")
-    fun findPropIdByName(name: String): Int
+    @Select("SELECT `id` FROM ${TableConst.PROP_INFO} WHERE `name` = #{name}")
+    fun findPropIdByName(name: String): Int?
 
     /**
      * 删除道具信息
