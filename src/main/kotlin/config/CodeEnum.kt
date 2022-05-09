@@ -1,4 +1,4 @@
-package com.loko.utils.cons
+package com.loko.utils.config
 
 enum class CodeEnum(val code: Int, val message: String) {
     SUCCESS(code = 0, message = "成功"),

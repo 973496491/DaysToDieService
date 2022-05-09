@@ -1,6 +1,6 @@
 package com.loko.utils.utils
 
-import com.loko.utils.cons.CodeEnum
+import com.loko.utils.config.CodeEnum
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import java.util.*

@@ -1,4 +1,4 @@
-package com.loko.utils.cons
+package com.loko.utils.config
 
 object Config {
 

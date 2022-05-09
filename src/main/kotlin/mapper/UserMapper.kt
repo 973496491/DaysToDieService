@@ -1,6 +1,6 @@
 package com.loko.utils.mapper
 
-import com.loko.utils.cons.TableConst
+import com.loko.utils.config.TableConst
 import com.loko.utils.req.InsertConfigReq
 import com.loko.utils.req.LoginReq
 import com.loko.utils.req.RegisterReq
@@ -46,9 +46,9 @@ interface UserMapper {
                 "b.is_admin as admin, " +
                 "b.fast_download_count as fastDownloadCount " +
             "FROM " +
-                "`user` AS a " +
-            "LEFT JOIN user_config AS b ON a.id = b.user_id " +
-            "LEFT JOIN user_token AS c ON c.user_id = a.id " +
+                "`${TableConst.USER}` AS a " +
+            "LEFT JOIN `${TableConst.USER_CONFIG}` AS b ON a.id = b.user_id " +
+            "LEFT JOIN `${TableConst.USER_TOKEN}` AS c ON c.user_id = a.id " +
             "WHERE " +
                 "c.token = #{token}"
     )

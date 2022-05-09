@@ -1,7 +1,7 @@
 package com.loko.utils.controller
 
 import com.loko.utils.base.BaseResp
-import com.loko.utils.cons.CodeEnum
+import com.loko.utils.config.CodeEnum
 import com.loko.utils.req.*
 import com.loko.utils.resp.UserTokenResp
 import com.loko.utils.service.UserService

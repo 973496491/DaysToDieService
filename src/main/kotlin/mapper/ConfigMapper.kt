@@ -1,6 +1,6 @@
 package com.loko.utils.mapper
 
-import com.loko.utils.cons.TableConst
+import com.loko.utils.config.TableConst
 import com.loko.utils.req.RegisterReq
 import com.loko.utils.resp.KeyInfoResp
 import com.loko.utils.resp.Whitelist
@@ -17,21 +17,8 @@ interface ConfigMapper {
     /**
      * 获取全部白名单信息
      */
-    @Select("SELECT `mod_name` as `name`, mod_author as author, mod_desc as `desc`, `is_online` as online FROM `whitelist`")
+    @Select("SELECT `mod_name` as `name`, mod_author as author, mod_desc as `desc`, `is_online` as online FROM `${TableConst.WHITELIST}`")
     fun getAllWhitelist(): MutableList<Whitelist>?
-
-    /**
-     * 查询白名单信息是否存在
-     */
-
-    /**
-     * 插入新的白名单
-     */
-    @Insert("insert into ${TableConst.USER} (`username`, `password`) values (#{userName}, #{password})")
-    @Options(useGeneratedKeys = true, keyProperty = "id")
-    fun insertNewUser(
-        @RequestBody user: RegisterReq,
-    )
 
     /**
      * 根据Key查询Xml内容
@@ -52,6 +39,6 @@ interface ConfigMapper {
     /**
      * 根据密钥id值和 steam id 查询密钥
      */
-    @Select("SELECT `id`, `key`, iv FROM `keys` WHERE `key_id` = #{keyId}")
+    @Select("SELECT `id`, `key`, iv FROM `${TableConst.KEYS}` WHERE `key_id` = #{keyId}")
     fun getKeyForId(keyId: String): KeyInfoResp?
 }

@@ -1,6 +1,6 @@
 package com.loko.utils.mapper
 
-import com.loko.utils.cons.TableConst
+import com.loko.utils.config.TableConst
 import com.loko.utils.insert_entity.DllEntity
 import org.apache.ibatis.annotations.*
 import org.springframework.web.bind.annotation.RequestBody

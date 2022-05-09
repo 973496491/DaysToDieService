@@ -1,8 +1,8 @@
 package com.loko.utils.controller
 
 import com.loko.utils.base.BaseResp
-import com.loko.utils.cons.CodeEnum
-import com.loko.utils.cons.Config
+import com.loko.utils.config.CodeEnum
+import com.loko.utils.config.Config
 import com.loko.utils.insert_entity.DllEntity
 import com.loko.utils.req.UploadImageReq
 import com.loko.utils.resp.FileUploadResp

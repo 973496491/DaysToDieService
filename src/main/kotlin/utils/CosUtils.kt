@@ -1,6 +1,6 @@
 package com.loko.utils.utils
 
-import com.loko.utils.cons.Config
+import com.loko.utils.config.Config
 import com.qcloud.cos.COSClient
 import com.qcloud.cos.ClientConfig
 import com.qcloud.cos.auth.BasicCOSCredentials

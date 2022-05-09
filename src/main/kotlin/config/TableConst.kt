@@ -1,4 +1,4 @@
-package com.loko.utils.cons
+package com.loko.utils.config
 
 object TableConst {
     /**
@@ -45,4 +45,14 @@ object TableConst {
      * 装备信息表名
      */
     const val XML_CONTENT = "xml_content"
+
+    /**
+     * 白名单表名
+     */
+    const val WHITELIST = "whitelist"
+
+    /**
+     * 密钥表名
+     */
+    const val KEYS = "keys"
 }

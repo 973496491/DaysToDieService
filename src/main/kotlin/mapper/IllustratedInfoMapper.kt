@@ -1,6 +1,6 @@
 package com.loko.utils.mapper
 
-import com.loko.utils.cons.TableConst
+import com.loko.utils.config.TableConst
 import com.loko.utils.insert_entity.UploadIllustratedInfoEntity
 import com.loko.utils.req.EditPropInfoReq
 import com.loko.utils.req.EditZombieInfoReq
