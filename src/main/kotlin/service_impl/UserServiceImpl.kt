@@ -5,7 +5,7 @@ import com.loko.utils.req.InsertConfigReq
 import com.loko.utils.req.LoginReq
 import com.loko.utils.req.RegisterReq
 import com.loko.utils.req.UpdateTokenReq
-import com.loko.utils.resp.UserInfoResp
+import com.loko.utils.entity.resp.UserInfoResp
 import com.loko.utils.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service

@@ -5,7 +5,7 @@ import com.loko.utils.config.CodeEnum
 import com.loko.utils.config.Config
 import com.loko.utils.insert_entity.DllEntity
 import com.loko.utils.req.UploadImageReq
-import com.loko.utils.resp.FileUploadResp
+import com.loko.utils.entity.resp.FileUploadResp
 import com.loko.utils.service.UploadService
 import com.loko.utils.utils.CosUtils
 import org.springframework.beans.factory.annotation.Autowired

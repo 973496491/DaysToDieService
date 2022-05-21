@@ -4,8 +4,8 @@ import com.loko.utils.base.BaseResp
 import com.loko.utils.config.CodeEnum
 import com.loko.utils.insert_entity.UploadIllustratedInfoEntity
 import com.loko.utils.req.*
-import com.loko.utils.resp.IllustratedInfo
-import com.loko.utils.resp.IllustratedInfoResp
+import com.loko.utils.entity.resp.IllustratedInfo
+import com.loko.utils.entity.resp.IllustratedInfoResp
 import com.loko.utils.service.IllustratedInfoService
 import com.loko.utils.utils.safeToInt
 import org.springframework.beans.factory.annotation.Autowired

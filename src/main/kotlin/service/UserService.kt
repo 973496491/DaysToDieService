@@ -4,7 +4,7 @@ import com.loko.utils.req.InsertConfigReq
 import com.loko.utils.req.LoginReq
 import com.loko.utils.req.RegisterReq
 import com.loko.utils.req.UpdateTokenReq
-import com.loko.utils.resp.UserInfoResp
+import com.loko.utils.entity.resp.UserInfoResp
 
 interface UserService {
 

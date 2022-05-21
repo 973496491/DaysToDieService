@@ -3,7 +3,7 @@ package com.loko.utils.controller
 import com.loko.utils.base.BaseResp
 import com.loko.utils.config.CodeEnum
 import com.loko.utils.req.*
-import com.loko.utils.resp.UserTokenResp
+import com.loko.utils.entity.resp.UserTokenResp
 import com.loko.utils.service.UserService
 import com.loko.utils.utils.JWTUtils
 import org.springframework.beans.factory.annotation.Autowired
@@ -156,7 +156,7 @@ open class UserController {
 //    @RequestMapping("/updateDownloadCount", method = [RequestMethod.POST])
 //    @ResponseBody
 //    fun updateDownloadCount(
-//        @RequestBody req: AddDownloadCountReq
+//        @RequestBody entity.req: AddDownloadCountReq
 //    ) {
 //
 //    }

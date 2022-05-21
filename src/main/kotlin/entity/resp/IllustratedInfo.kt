@@ -1,4 +1,4 @@
-package com.loko.utils.resp
+package com.loko.utils.entity.resp
 
 import java.beans.ConstructorProperties
 

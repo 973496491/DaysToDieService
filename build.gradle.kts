@@ -50,6 +50,10 @@ dependencies {
     // redis
     implementation("org.springframework.boot:spring-boot-starter-data-redis:2.6.7")
     implementation("org.apache.commons:commons-pool2:2.11.1")
+    // xml utils
+    implementation("com.thoughtworks.xstream:xstream:1.4.19")
+    // 协程
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1")
 }
 
 java.sourceCompatibility = JavaVersion.VERSION_1_8

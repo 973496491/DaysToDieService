@@ -1,9 +1,9 @@
 package com.loko.utils.service
 
+import com.loko.utils.entity.resp.*
 import com.loko.utils.insert_entity.UploadIllustratedInfoEntity
 import com.loko.utils.req.EditPropInfoReq
 import com.loko.utils.req.EditZombieInfoReq
-import com.loko.utils.resp.*
 import org.apache.ibatis.annotations.Param
 import org.springframework.stereotype.Service
 
