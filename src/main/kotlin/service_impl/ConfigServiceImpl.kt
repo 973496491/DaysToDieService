@@ -64,21 +64,28 @@ class ConfigServiceImpl : ConfigService {
         }
     }
 
+    @Suppress("UNCHECKED_CAST")
     override fun updateWhitelistItem(item: Whitelist): Boolean {
         val hKey = CacheModel.Config.KEY_WHITELIST
         val whitelist = redisUtil.hget(hKey, CacheModel.EMPTY_ID)
 
-        // fixme
         val update = { list: MutableList<Whitelist> ->
             val isSuc = configMapper.updateWhitelistItem(item) > 0
             if (isSuc) {
-                redisUtil.hset(hKey, CacheModel.EMPTY_ID, list.add(item))
+                val newList = list.map {
+                    if (it.id == item.id) {
+                        item
+                    } else {
+                        it
+                    }
+                }
+                redisUtil.hset(hKey, CacheModel.EMPTY_ID, newList)
                 true
             } else {
                 false
             }
         }
-        // fixme
+        return update.invoke(whitelist as MutableList<Whitelist>)
     }
 
     @Suppress("UNCHECKED_CAST")
