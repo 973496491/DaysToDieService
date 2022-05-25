@@ -2,8 +2,7 @@ package com.loko.utils.service_impl
 
 import com.loko.utils.config.CacheModel
 import com.loko.utils.entity.common.Whitelist
-import com.loko.utils.entity.resp.KeyInfoResp
-import com.loko.utils.entity.resp.XmlContentResp
+import com.loko.utils.entity.resp.ModDataResp
 import com.loko.utils.mapper.ConfigMapper
 import com.loko.utils.service.ConfigService
 import com.loko.utils.utils.RedisUtils
@@ -12,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import javax.annotation.Resource
 
+@Suppress("unused")
 @Service
 class ConfigServiceImpl : ConfigService {
 
@@ -88,17 +88,7 @@ class ConfigServiceImpl : ConfigService {
         return update.invoke(whitelist as MutableList<Whitelist>)
     }
 
-    @Suppress("UNCHECKED_CAST")
-    override fun getXmlDataForKey(key: Int, modName: String, modAuthor: String): MutableList<XmlContentResp>? {
-        val hKey = CacheModel.Config.KEY_XML_CONTENT
-        val xmlList = redisUtil.hget(hKey, "$key$modName$modAuthor") as? MutableList<XmlContentResp>
-        return xmlList ?: configMapper.getXmlDataForKey(key, modName, modAuthor)?.let {
-            redisUtil.hset(hKey, "$key", it)
-            it
-        }
-    }
-
-    override fun getKeyForId(keyId: String): KeyInfoResp? {
-        return configMapper.getKeyForId(keyId)
+    override fun getXmlContentFromSteamId(id: String, modKey: String): MutableList<ModDataResp>? {
+        return configMapper.getXmlContentFromSteamId(id, modKey)
     }
 }

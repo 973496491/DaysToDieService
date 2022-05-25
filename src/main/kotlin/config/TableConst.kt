@@ -55,4 +55,9 @@ object TableConst {
      * 密钥表名
      */
     const val KEYS = "keys"
+
+    /**
+     * steam id表名
+     */
+    const val STEAM_ID = "steam_id"
 }

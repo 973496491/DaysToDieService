@@ -1,8 +1,7 @@
 package com.loko.utils.service
 
 import com.loko.utils.entity.common.Whitelist
-import com.loko.utils.entity.resp.KeyInfoResp
-import com.loko.utils.entity.resp.XmlContentResp
+import com.loko.utils.entity.resp.ModDataResp
 import org.springframework.stereotype.Service
 
 @Service
@@ -16,11 +15,5 @@ interface ConfigService {
 
     fun updateWhitelistItem(item: Whitelist): Boolean
 
-    fun getXmlDataForKey(
-        key:  Int,
-        modName: String,
-        modAuthor: String,
-    ): MutableList<XmlContentResp>?
-
-    fun getKeyForId(keyId: String): KeyInfoResp?
+    fun getXmlContentFromSteamId(id: String, modKey: String): MutableList<ModDataResp>?
 }

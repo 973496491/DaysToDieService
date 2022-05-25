@@ -3,8 +3,7 @@ package com.loko.utils.controller
 import com.loko.utils.base.BaseResp
 import com.loko.utils.config.CodeEnum
 import com.loko.utils.entity.common.Whitelist
-import com.loko.utils.entity.resp.XmlInfoResp
-import com.loko.utils.req.XmlContentReq
+import com.loko.utils.entity.req.XmlContentReq
 import com.loko.utils.service.ConfigService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
@@ -70,35 +69,11 @@ class ConfigController {
     fun getXmlDataForKey(
         @RequestBody req: XmlContentReq,
     ): BaseResp {
-        val keyInfo = configService.getKeyForId(req.key) ?: return BaseResp(
-            code = CodeEnum.KEY_INFO_NOT_FOUND.code,
-            message = CodeEnum.KEY_INFO_NOT_FOUND.message,
+        val keyInfo = configService.getXmlContentFromSteamId(req.steamId, req.modKey)
+        return BaseResp(
+            code = CodeEnum.SUCCESS.code,
+            message = CodeEnum.SUCCESS.message,
+            data = keyInfo
         )
-
-        val keyId = keyInfo.id
-        val xmlList = configService.getXmlDataForKey(keyId, req.modName, req.modAuthor)
-        return if (xmlList == null) {
-            BaseResp(
-                code = CodeEnum.XML_INFO_IS_NULL.code,
-                message = CodeEnum.XML_INFO_IS_NULL.message,
-            )
-        } else {
-            if (xmlList.isNotEmpty()) {
-                BaseResp(
-                    code = CodeEnum.SUCCESS.code,
-                    message = CodeEnum.SUCCESS.message,
-                    data = XmlInfoResp(
-                        publicKey = keyInfo.key,
-                        iv = keyInfo.iv,
-                        xmlList = xmlList
-                    ),
-                )
-            } else {
-                BaseResp(
-                    code = CodeEnum.SUCCESS.code,
-                    message = CodeEnum.SUCCESS.message,
-                )
-            }
-        }
     }
 }

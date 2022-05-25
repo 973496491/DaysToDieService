@@ -1,11 +1,10 @@
-package com.loko.utils.req
+package com.loko.utils.entity.req
 
 import java.beans.ConstructorProperties
 
 data class XmlContentReq @ConstructorProperties(
-    "key", "modName", "modAuthor"
+    "steamId", "modKey"
 ) constructor(
-    val key: String,
-    val modName: String,
-    val modAuthor: String,
+    val steamId: String,
+    val modKey: String,
 )
