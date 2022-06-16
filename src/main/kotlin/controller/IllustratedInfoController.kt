@@ -87,6 +87,7 @@ open class IllustratedInfoController {
         val id = illustratedInfoService.findZombieIdByName(req.name)
         if (id > 0) {
             // 更新信息
+            insertReq.id = id
             val isSuc = illustratedInfoService.updateZombieInfo(insertReq)
             return if (isSuc) {
                 BaseResp(

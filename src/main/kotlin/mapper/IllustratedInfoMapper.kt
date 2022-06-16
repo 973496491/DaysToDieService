@@ -85,9 +85,7 @@ interface IllustratedInfoMapper {
      * 更新一条古神信息
      */
     @Update(
-        "UPDATE ${TableConst.ZOMBIE_INFO} " +
-                "set type = #{type}, name = #{name}, image = #{imageKey}, content = #{content} " +
-                "where `id` = #{id}"
+        "UPDATE ${TableConst.ZOMBIE_INFO} SET type = #{type}, name = #{name}, image = #{imageKey}, content = #{content} WHERE `id` = #{id}"
     )
     @Options(useGeneratedKeys = true, keyProperty = "id")
     fun updateZombieInfo(info: EditZombieInfoReq): Int
